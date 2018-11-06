@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4281c55d-6e85-40e1-b84d-126bb29fa0f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/201811/deeplink.md" beforeDir="false" afterPath="$PROJECT_DIR$/201811/deeplink.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/201811/dns是什么.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/201811/img/dns.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/201811/img/dnsyu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,53 +20,43 @@
     <session id="-128840727">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.1" value="3" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="4" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="2" />
+          <entry key="md" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="22" />
+          <entry key="md" value="192" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="22" />
+          <entry key="Markdown" value="192" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/201807/端内分享bug.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="133">
-                <caret line="7" selection-start-line="7" selection-end-line="7" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/201811/deeplink.md">
+        <entry file="file://$PROJECT_DIR$/201811/dns是什么.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="76">
-                <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <first_editor relative-caret-position="456">
+                <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               </first_editor>
               <second_editor />
             </state>
@@ -79,6 +72,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/201811/deeplink.md" />
+        <option value="$PROJECT_DIR$/201811/dns是什么.md" />
       </list>
     </option>
   </component>
@@ -99,6 +93,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,19 +104,23 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="201807" type="462c0819:PsiDirectoryNode" />
+              <item name="201811" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/201811/img" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -147,12 +146,13 @@
       <updated>1541468882604</updated>
       <workItem from="1541468884115" duration="125000" />
       <workItem from="1541469348519" duration="64000" />
-      <workItem from="1541469444605" duration="6000" />
+      <workItem from="1541469444605" duration="31000" />
+      <workItem from="1541474348790" duration="1589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195000" />
+    <option name="totallyTimeSpent" value="1809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -167,7 +167,7 @@
     <frame x="82" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960506" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1348078" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -193,6 +193,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/201811/deeplink.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="76">
+            <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/201807/端内分享bug.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -203,11 +213,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/201811/deeplink.md">
+    <entry file="file://$PROJECT_DIR$/201811/dns是什么.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="76">
-            <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <first_editor relative-caret-position="456">
+            <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           </first_editor>
           <second_editor />
         </state>
