@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4281c55d-6e85-40e1-b84d-126bb29fa0f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/201811/chrome性能检测工具.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/201811/img/chrome.jpg" afterDir="false" />
+    <list default="true" id="4281c55d-6e85-40e1-b84d-126bb29fa0f4" name="Default Changelist" comment="performance">
+      <change afterPath="$PROJECT_DIR$/201811/img/web性能优化.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/id_rsa_new" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/id_rsa_new.pub" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,32 +18,36 @@
     <session id="-128840727">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.1" value="4" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.1" value="6" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="1" />
           <entry key="id_rsa_new" value="1" />
-          <entry key="md" value="7" />
+          <entry key="md" value="12" />
           <entry key="pub" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="7" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Markdown" value="12" />
+          <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="322" />
+          <entry key="md" value="584" />
+          <entry key="txt" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="322" />
+          <entry key="Markdown" value="584" />
+          <entry key="PLAIN_TEXT" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -54,13 +55,13 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/201811/chrome性能检测工具.md">
+        <entry file="file://$PROJECT_DIR$/201811/img/web性能优化.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="76">
-                <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+                <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
               </first_editor>
               <second_editor />
             </state>
@@ -78,6 +79,8 @@
         <option value="$PROJECT_DIR$/201811/deeplink.md" />
         <option value="$PROJECT_DIR$/201811/dns是什么.md" />
         <option value="$PROJECT_DIR$/201811/chrome性能检测工具.md" />
+        <option value="$PROJECT_DIR$/201811/Performance.md" />
+        <option value="$PROJECT_DIR$/201811/img/web性能优化.md" />
       </list>
     </option>
   </component>
@@ -153,11 +156,14 @@
       <workItem from="1541469348519" duration="64000" />
       <workItem from="1541469444605" duration="31000" />
       <workItem from="1541474348790" duration="3617000" />
+      <workItem from="1541580963710" duration="4396000" />
+      <workItem from="1541647277973" duration="5777000" />
+      <workItem from="1541730104016" duration="36000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3837000" />
+    <option name="totallyTimeSpent" value="14527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -183,8 +189,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32970297" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32970297" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970297" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32970297" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -233,6 +239,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="performance" />
+    <option name="LAST_COMMIT_MESSAGE" value="performance" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/201807/端内分享bug.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -264,21 +274,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/id_rsa_new.pub">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+    <entry file="file://$PROJECT_DIR$/id_rsa_new.pub" />
+    <entry file="file://$PROJECT_DIR$/id_rsa_new" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/id_rsa_new">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/201811/chrome性能检测工具.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="76">
             <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201811/Performance.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="273">
+            <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/201811/img/web性能优化.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="76">
+            <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
           </first_editor>
           <second_editor />
         </state>
