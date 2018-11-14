@@ -9,3 +9,8 @@ https://github.com/JohnsenZhou/Front-End-Performance-Checklist#table-of-contents
  
  
 在事件瀑布面板会有三条虚线，绿色的表示第一次开始绘制页面，蓝色线代表DOM已加载完成，红色线表示页面加载完(包括资源引用)
+
+### google light house
+https://developers.google.com/speed/pagespeed/insights/
+
+https://developers.google.com/web/tools/lighthouse/

@@ -1,14 +1,52 @@
-# Performance
+# 前端性能监控
+目标：打造前端性能监控系统，监控线上用户真实访问性能。
+
+## 为什么要监控性能？
+
+首先：因为一个慢的网站非常不舒服。
+
+其次：因为它直接影响您的产品。性能影响了用户体验。
+
+![](./img/shouyi.jpg)
+
+## 有什么可用的工具？
+
+- [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/) WebPageTest 是一款非常优秀的网页前端性能测试工具,已开源。可以使用在线版，也可以自己搭建。
+- [Lighthouse - Google](https://developers.google.com/web/tools/lighthouse/#devtools) google开发的性能测试工具，有chorme插件、node CLI。
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)  google的在线版测试工具。
+- chrome控制台中的performance。
+
+既然有这么多优秀的工具，为什么要监控线上用户真实访问性能呢？
+
+因为工具模拟测试会在一定程度上与真实情况偏离，有时无法反映性能的波动情况。
+
+所以需要我们在项目中插入统计代码，来实时统计每次用户访问是的性能数据。
+
+## 如何采集性能数据？
+线上监控哪些指标呢？如何更好地反映用户感知？
+
+对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响应等浏览器加载过程指标。我们根据用户的痛点，将浏览器加载过程抽取出几个关键指标，如白屏时间、首屏时间、总下载时间等。
+
+- 白屏时间：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间，即用户首次看到内容的时间。
+- 首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间
+- 页面总下载时间：页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间
+
+我们可以利用`Performance `Web API 接口可以获取到当前页面中与性能相关的信息。
+
+下面介绍一下`Performance `。
+
+## Performance
+[mdn文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance)
 
 `Performance` 接口可以获取到当前页面中与性能相关的信息。
 
-我们可以使用 `window.performance` 提供了一组精确的数据，经过简单的计算就能得出一些网页性能数据。
+我们可以使用 `performance` 提供了一组精确的数据，经过简单的计算就能得出一些网页性能数据。
 
-先在chrome浏览器的控制台中输入`window.performance`看下出现什么。
+先在chrome浏览器的控制台中输入`performance`看下出现属性。
 
 ![](./img/window.performance.jpg)
 
-## 属性
+### `Performance`属性
 
 1.`performance.memory`其是 Chrome 添加的一个非标准扩展，描述基本内存使用情况。
 
@@ -42,6 +80,8 @@ navigation: {
 
 先看下一个请求发出的整个过程中，各种环节的时间顺序：
 ![](./img/072455NuJ.png)
+
+![](./img/asdfac.svg)
 
 具体含义：
 
@@ -85,12 +125,12 @@ timing: {
         
         domComplete：返回当前网页DOM结构生成时（即Document.readyState属性变为“complete”，以及相应的readystatechange事件发生时）的Unix毫秒时间戳。
         
-        loadEventStart：返回当前网页load事件的回调函数开始时的Unix毫秒时间戳。如果该事件还没有发生，返回0。
+        loadEventStart：返回当前网页load事件的回调函数开始时的Unix毫秒时间戳。如果该事件还没有发生，返回0。 window.load里面代码执行时间
         
         loadEventEnd：返回当前网页load事件的回调函数运行结束时的Unix毫秒时间戳。如果该事件还没有发生，返回0。
 ```
 
-## 使用 performance.timing 信息简单计算出网页性能数据
+### 使用 performance.timing 信息简单计算出网页性能数据
 
 ```js
 // 计算加载时间
@@ -109,43 +149,46 @@ function getPerformanceTiming () {
     //【重要】页面加载完成的时间
     //【原因】这几乎代表了用户等待页面可用的时间
     times.loadPage = t.loadEventEnd - t.navigationStart;
- 
+
     //【重要】解析 DOM 树结构的时间
     //【原因】反省下你的 DOM 树嵌套是不是太多了！
     times.domReady = t.domComplete - t.responseEnd;
- 
+
     //【重要】重定向的时间
     //【原因】拒绝重定向！比如，http://example.com/ 就不该写成 http://example.com
     times.redirect = t.redirectEnd - t.redirectStart;
- 
+
     //【重要】DNS 查询时间
     //【原因】DNS 预加载做了么？页面内是不是使用了太多不同的域名导致域名查询的时间太长？
-    // 可使用 HTML5 Prefetch 预查询 DNS ，见：[HTML5 prefetch](http://segmentfault.com/a/1190000000633364)            
+    // 可使用 HTML5 Prefetch 预查询 DNS ，见：[HTML5 prefetch](http://segmentfault.com/a/1190000000633364)
     times.lookupDomain = t.domainLookupEnd - t.domainLookupStart;
- 
-    //【重要】最初的网络请求被发起 到 从服务器接收到第一个字节 的时间
+
+    //【重要】读取页面第一个字节的时间
     //【原因】这可以理解为用户拿到你的资源占用的时间，加异地机房了么，加CDN 处理了么？加带宽了么？加 CPU 运算速度了么？
     // TTFB 即 Time To First Byte 的意思
     // 维基百科：https://en.wikipedia.org/wiki/Time_To_First_Byte
     times.ttfb = t.responseStart - t.navigationStart;
- 
+
     //【重要】内容加载完成的时间
-    //【原因】页面内容经过 gzip 压缩了么，静态资源 css/js 等压缩了么？
+    //【原因】页面内容经过 gzip 压缩了么，静态资源 img/js 等压缩了么？
     times.request = t.responseEnd - t.requestStart;
- 
+
     //【重要】执行 onload 回调函数的时间
     //【原因】是否太多不必要的操作都放到 onload 回调函数里执行了，考虑过延迟加载、按需加载的策略么？
     times.loadEvent = t.loadEventEnd - t.loadEventStart;
- 
+
     // DNS 缓存时间
     times.appcache = t.domainLookupStart - t.fetchStart;
- 
+
     // 卸载页面的时间
     times.unloadEvent = t.unloadEventEnd - t.unloadEventStart;
- 
+
     // TCP 建立连接完成握手的时间
     times.connect = t.connectEnd - t.connectStart;
  
+    // 白屏
+    times.whiteTime = t.domInteractive - t.navigationStart;
+
     return times;
 }
 ```
@@ -153,7 +196,7 @@ function getPerformanceTiming () {
 
 
 
-## 方法
+### `Performance`方法
 
 1.`performance.now()`
 
@@ -181,21 +224,6 @@ performance.now()
 ![](./img/getall.jpg)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 参考链接：
 https://developer.mozilla.org/zh-CN/docs/Web/API/Window/performance
 
@@ -203,3 +231,5 @@ http://javascript.ruanyifeng.com/bom/performance.html
 
 http://www.alloyteam.com/2015/09/explore-performance/
 
+
+## 示例
