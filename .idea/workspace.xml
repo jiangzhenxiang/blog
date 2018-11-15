@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4281c55d-6e85-40e1-b84d-126bb29fa0f4" name="Default Changelist" comment="performance">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/201811/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/201811/Performance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/201811/chrome性能检测工具.md" beforeDir="false" afterPath="$PROJECT_DIR$/201811/chrome性能检测工具.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,38 +19,39 @@
     <session id="-128840727">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
-          <entry key="project.open.time.1" value="8" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.1" value="9" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="id_rsa_new" value="1" />
-          <entry key="md" value="16" />
+          <entry key="md" value="17" />
           <entry key="pub" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="16" />
+          <entry key="Markdown" value="17" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="933" />
+          <entry key="md" value="1004" />
           <entry key="txt" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="17" />
-          <entry key="Markdown" value="916" />
+          <entry key="JavaScript" value="22" />
+          <entry key="Markdown" value="982" />
           <entry key="PLAIN_TEXT" value="19" />
         </counts>
       </usages-collector>
@@ -62,8 +65,20 @@
         <entry file="file://$PROJECT_DIR$/201811/Performance.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="495">
-                <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+              <first_editor relative-caret-position="-2317">
+                <caret line="100" column="49" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="49" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/201811/chrome性能检测工具.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="228">
+                <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
               </first_editor>
               <second_editor />
             </state>
@@ -81,8 +96,8 @@
         <option value="$PROJECT_DIR$/201811/deeplink.md" />
         <option value="$PROJECT_DIR$/201811/dns是什么.md" />
         <option value="$PROJECT_DIR$/201811/img/web性能优化.md" />
-        <option value="$PROJECT_DIR$/201811/chrome性能检测工具.md" />
         <option value="$PROJECT_DIR$/201811/Performance.md" />
+        <option value="$PROJECT_DIR$/201811/chrome性能检测工具.md" />
       </list>
     </option>
   </component>
@@ -93,15 +108,16 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="82" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,12 +140,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -168,12 +186,14 @@
       <workItem from="1541731041831" duration="846000" />
       <workItem from="1541768342727" duration="1073000" />
       <workItem from="1541988835743" duration="5000" />
-      <workItem from="1542162375646" duration="3416000" />
+      <workItem from="1542162375646" duration="4436000" />
+      <workItem from="1542183230131" duration="1278000" />
+      <workItem from="1542192027674" duration="2510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19901000" />
+    <option name="totallyTimeSpent" value="24709000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -185,10 +205,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="82" y="-1080" width="1920" height="1080" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13460183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.100579254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -200,7 +219,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970297" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32871288" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -314,8 +333,8 @@
     <entry file="file://$PROJECT_DIR$/201811/chrome性能检测工具.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="304">
-            <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <first_editor relative-caret-position="228">
+            <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
           </first_editor>
           <second_editor />
         </state>
@@ -324,8 +343,8 @@
     <entry file="file://$PROJECT_DIR$/201811/Performance.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="495">
-            <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+          <first_editor relative-caret-position="-2317">
+            <caret line="100" column="49" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>

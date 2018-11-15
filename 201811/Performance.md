@@ -25,11 +25,12 @@
 ## 如何采集性能数据？
 线上监控哪些指标呢？如何更好地反映用户感知？
 
-对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响应等浏览器加载过程指标。我们根据用户的痛点，将浏览器加载过程抽取出几个关键指标，如白屏时间、首屏时间、总下载时间等。
+对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响应等浏览器加载过程指标。我们根据用户的痛点，将浏览器加载过程抽取出几个关键指标，如白屏时间、首屏时间、dom树构建时间、总下载时间等。
 
 - 白屏时间：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间，即用户首次看到内容的时间。
-- 首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间
-- 页面总下载时间：页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间
+- 首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间。
+- dom树构建时间：指浏览器开始对基础页文本内容进行解析到从文本中构建出一个内部数据结构（DOM树）的时间。
+- 页面总下载时间：页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间。
 
 我们可以利用`Performance `Web API 接口可以获取到当前页面中与性能相关的信息。
 
@@ -186,7 +187,11 @@ function getPerformanceTiming () {
     // TCP 建立连接完成握手的时间
     times.connect = t.connectEnd - t.connectStart;
  
-    // 白屏
+    /**
+     * 白屏时间
+     * 这个时间没有准确定义
+     * 计算方式：t.domInteractive - t.navigationStart 或 t.responseStart - t.navigationStart
+    */ 
     times.whiteTime = t.domInteractive - t.navigationStart;
 
     return times;
@@ -224,7 +229,8 @@ performance.now()
 ![](./img/getall.jpg)
 
 
-## 参考链接：
+#### `performance`参考链接：
+
 https://developer.mozilla.org/zh-CN/docs/Web/API/Window/performance
 
 http://javascript.ruanyifeng.com/bom/performance.html
@@ -232,4 +238,12 @@ http://javascript.ruanyifeng.com/bom/performance.html
 http://www.alloyteam.com/2015/09/explore-performance/
 
 
-## 示例
+## 使用示例
+
+
+## 如何优化？
+
+[前端性能清单，让你的网站跑的更快](https://github.com/thedaviddias/Front-End-Performance-Checklist)  
+[中文版](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
+
+
