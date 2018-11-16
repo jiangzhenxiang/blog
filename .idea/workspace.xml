@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4281c55d-6e85-40e1-b84d-126bb29fa0f4" name="Default Changelist" comment="performance">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/201811/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/201811/Performance.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/201811/chrome性能检测工具.md" beforeDir="false" afterPath="$PROJECT_DIR$/201811/chrome性能检测工具.md" afterDir="false" />
-    </list>
+    <list default="true" id="4281c55d-6e85-40e1-b84d-126bb29fa0f4" name="Default Changelist" comment="performance" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -19,7 +15,7 @@
     <session id="-128840727">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -33,11 +29,13 @@
           <entry key="gitignore" value="1" />
           <entry key="id_rsa_new" value="1" />
           <entry key="md" value="17" />
+          <entry key="png" value="1" />
           <entry key="pub" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Image" value="1" />
           <entry key="Markdown" value="17" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
@@ -65,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/201811/Performance.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="-2317">
-                <caret line="100" column="49" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="49" />
+              <first_editor relative-caret-position="551">
+                <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
               </first_editor>
               <second_editor />
             </state>
@@ -125,17 +123,6 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="201811" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="201811" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -188,12 +175,12 @@
       <workItem from="1541988835743" duration="5000" />
       <workItem from="1542162375646" duration="4436000" />
       <workItem from="1542183230131" duration="1278000" />
-      <workItem from="1542192027674" duration="2510000" />
+      <workItem from="1542192027674" duration="4625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24709000" />
+    <option name="totallyTimeSpent" value="26824000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -206,6 +193,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="82" y="-1080" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.100579254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -340,11 +328,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/201811/img/072455NuJ.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/201811/Performance.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="-2317">
-            <caret line="100" column="49" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="49" />
+          <first_editor relative-caret-position="551">
+            <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
           </first_editor>
           <second_editor />
         </state>

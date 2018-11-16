@@ -1,34 +1,45 @@
-# 前端性能监控
+# 前端性能监控及Performance
 目标：打造前端性能监控系统，监控线上用户真实访问性能。
 
 ## 为什么要监控性能？
 
-首先：因为一个慢的网站非常不舒服。
+首先：因为它直接影响您的产品。性能影响了用户体验。
 
-其次：因为它直接影响您的产品。性能影响了用户体验。
+其次：影响公司利益。
 
 ![](./img/shouyi.jpg)
 
-## 有什么可用的工具？
+## 如何监控性能？
+
+### 一、利用测试工具
 
 - [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/) WebPageTest 是一款非常优秀的网页前端性能测试工具,已开源。可以使用在线版，也可以自己搭建。
 - [Lighthouse - Google](https://developers.google.com/web/tools/lighthouse/#devtools) google开发的性能测试工具，有chorme插件、node CLI。
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)  google的在线版测试工具。
 - chrome控制台中的performance。
 
-既然有这么多优秀的工具，为什么要监控线上用户真实访问性能呢？
+缺点：工具模拟测试会在一定程度上与真实情况偏离，有时无法反映性能的波动情况。采样少容易失真、无法监控复杂应用与细分功能。
+
+### 二、在我们的页面中植入js开监控
+
+利用`performance`接口可以获取到当前页面中与性能相关的信息。经过一些计算，
+就能得出我们想要的网页性能数据。
+
+#### 既然有这么多优秀的工具，为什么要监控线上用户真实访问性能呢？
 
 因为工具模拟测试会在一定程度上与真实情况偏离，有时无法反映性能的波动情况。
 
-所以需要我们在项目中插入统计代码，来实时统计每次用户访问是的性能数据。
+所以需要我们在项目中植入js统计代码，来实时统计真实海量用户访问是的性能数据。
 
-## 如何采集性能数据？
+
+
+## 需要采集哪些性能数据，如何采集？
 线上监控哪些指标呢？如何更好地反映用户感知？
 
 对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响应等浏览器加载过程指标。我们根据用户的痛点，将浏览器加载过程抽取出几个关键指标，如白屏时间、首屏时间、dom树构建时间、总下载时间等。
 
-- 白屏时间：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间，即用户首次看到内容的时间。
-- 首屏时间：用户浏览器首屏内所有内容都呈现出来所花费的时间。
+- 白屏时间：First Contentful Paint。用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间，即用户首次看到内容的时间。
+- 首屏时间：First Meaningful Paint。用户浏览器首屏内主要内容都呈现出来所花费的时间。
 - dom树构建时间：指浏览器开始对基础页文本内容进行解析到从文本中构建出一个内部数据结构（DOM树）的时间。
 - 页面总下载时间：页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间。
 
@@ -36,8 +47,8 @@
 
 下面介绍一下`Performance `。
 
-## Performance
-[mdn文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance)
+## Performance介绍
+[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance)
 
 `Performance` 接口可以获取到当前页面中与性能相关的信息。
 
@@ -80,9 +91,12 @@ navigation: {
 5.`Performance.timing`: 对象包含了各种与浏览器性能有关的时间数据，提供浏览器处理网页的各个阶段的耗时.
 
 先看下一个请求发出的整个过程中，各种环节的时间顺序：
-![](./img/072455NuJ.png)
 
 ![](./img/asdfac.svg)
+
+![](./img/072455NuJ.png)
+
+
 
 具体含义：
 
@@ -229,7 +243,7 @@ performance.now()
 ![](./img/getall.jpg)
 
 
-#### `performance`参考链接：
+#### `performance`的参考链接：
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/Window/performance
 
@@ -239,9 +253,20 @@ http://www.alloyteam.com/2015/09/explore-performance/
 
 
 ## 使用示例
+见项目monitor示例。
 
+## 分析展示性能数据
 
-## 如何优化？
+搭建一个性能监控的后台系统，统计各个项目的性能指标。
+
+## 我们可以做哪些优化？
+
+1. HTML
+2. CSS
+3. Fonts
+4. Images
+5. JavaScript
+6. JS Frameworks (in progress)
 
 [前端性能清单，让你的网站跑的更快](https://github.com/thedaviddias/Front-End-Performance-Checklist)  
 [中文版](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
