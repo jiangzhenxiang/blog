@@ -1,54 +1,59 @@
-# 前端性能监控及Performance
-目标：打造前端性能监控系统，监控线上用户真实访问性能。
+# 前端性能监控及前端性能优化
+
+1. 前端性能监控系统 及 **如何做到性能监控**
+2. **如何进行前端性能优化**
 
 ## 为什么要监控性能？
 
-首先：因为它直接影响您的产品。性能影响了用户体验。
+首先：因为性能直接影响了产品。对于用户来说，加载的延迟、操作的卡顿影响了用户体验
 
-其次：影响公司利益。
+其次：对于公司来说，影响了公司利益
 
-![](./img/shouyi.jpg)
+> 国外有很多这方面的调研数据：
+> ![](./img/shouyi.jpg)
 
 ## 如何监控性能？
+1. 利用测试工具
+2. **在我们的页面中植入js来监控（主要内容）**
 
-### 一、利用测试工具
+### 1、利用测试工具
+现在有很多优秀成熟的工具，下面简单介绍几个。
 
-- [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/) WebPageTest 是一款非常优秀的网页前端性能测试工具,已开源。可以使用在线版，也可以自己搭建。
-- [Lighthouse - Google](https://developers.google.com/web/tools/lighthouse/#devtools) google开发的性能测试工具，有chorme插件、node CLI。
+- [WebPagetest](https://www.webpagetest.org/) WebPageTest 是一款非常优秀的网页前端性能测试工具,已开源。可以使用在线版，也可以自己搭建。
+- [Lighthouse - Google](https://developers.google.com/web/tools/lighthouse/#devtools) google开发的性能测试工具，有chorme插件、node CLI命令行。
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)  google的在线版测试工具。
-- chrome控制台中的performance。
+- chrome控制台中的performance、audit。
 
-缺点：工具模拟测试会在一定程度上与真实情况偏离，有时无法反映性能的波动情况。采样少容易失真、无法监控复杂应用与细分功能。
+大家有兴趣的可以自己多用用。
 
-### 二、在我们的页面中植入js开监控
+缺点：
+> 工具模拟测试会在一定程度上与真实情况偏离，有时无法反映性能的波动情况，无法知道性能影响用户数
+> 
+> 采样少容易失真、无法监控复杂应用与细分功能。
 
-利用`performance`接口可以获取到当前页面中与性能相关的信息。经过一些计算，
-就能得出我们想要的网页性能数据。
+### 2、在我们的页面中植入js
 
-#### 既然有这么多优秀的工具，为什么要监控线上用户真实访问性能呢？
+利用web的`performance`接口，可以获取到当前页面中与性能相关的信息。  经过一些计算，就能得出我们想要的网页性能数据。
 
-因为工具模拟测试会在一定程度上与真实情况偏离，有时无法反映性能的波动情况。
-
-所以需要我们在项目中植入js统计代码，来实时统计真实海量用户访问是的性能数据。
-
+我们在项目中植入js统计代码的方式，能够实时统计真实用户访问的性能数据。
 
 
 ## 需要采集哪些性能数据，如何采集？
-线上监控哪些指标呢？如何更好地反映用户感知？
+线上监控有哪些指标呢？如何更好地反映用户感知？
 
-对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响应等浏览器加载过程指标。我们根据用户的痛点，将浏览器加载过程抽取出几个关键指标，如白屏时间、首屏时间、dom树构建时间、总下载时间等。
+对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响应、dom渲染时间等浏览器加载过程指标。
 
-- 白屏时间：First Contentful Paint。用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间，即用户首次看到内容的时间。
-- 首屏时间：First Meaningful Paint。用户浏览器首屏内主要内容都呈现出来所花费的时间。
-- dom树构建时间：指浏览器开始对基础页文本内容进行解析到从文本中构建出一个内部数据结构（DOM树）的时间。
-- 页面总下载时间：页面所有资源都加载完成并呈现出来所花的时间，即页面 onload 的时间。
+我们根据用户的痛点，将浏览器加载过程抽取出几个关键指标，如白屏时间、首屏时间、dom树构建时间、总下载时间等。
 
-我们可以利用`Performance `Web API 接口可以获取到当前页面中与性能相关的信息。
 
-下面介绍一下`Performance `。
+- **白屏时间**：用户从打开页面开始到页面开始有东西呈现为止，这过程中占用的时间就是白屏时间，即用户首次看到内容的时间。
+- **首屏时间**：用户浏览器首屏内容呈现出来所花费的时间。
+- **dom树构建时间**：指浏览器开始对基础页文本内容进行解析到从文本中构建出一个内部数据结构（DOM树）的时间。
+- **页面总加载时间**：页面所有资源都加载完成并呈现出来所花的时间。
+
+**如何采集**：利用`Performance `接口。下面介绍一下`Performance `。
 
 ## Performance介绍
-[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance)
 
 `Performance` 接口可以获取到当前页面中与性能相关的信息。
 
@@ -72,9 +77,10 @@ memory:{
 }
 ```
 
-2.`Performance.navigation` 这个对象表示出现在当前浏览上下文的 navigation 类型，比如获取某个资源所需要的重定向次数
+2.`Performance.navigation` 这个对象表示出现在当前浏览上下文的 navigation 类型，比如加载还是刷新、发生了多少次重定向
 
 ```angular2html
+//  哲学问题：我从哪里来？
 navigation: {
     redirectCount: 0, // 如果有重定向的话，页面通过几次重定向跳转而来
     type: 0           // 0   即 TYPE_NAVIGATENEXT 正常进入的页面（非刷新、非重定向等）
@@ -84,11 +90,12 @@ navigation: {
 }
 ```
 
-3.`Performance.onresourcetimingbufferfull`是一个回调的 EventTarget，当触发 resourcetimingbufferfull 事件的时候会被调用。
+3.`Performance.onresourcetimingbufferfull`是一个事件监听函数，当触发 resourcetimingbufferfull 事件的时候会被调用。
+这个事件当浏览器的资源时间性能缓冲区已满时会触发。可以通过监听这一事件触发来预估页面crash（崩溃），统计页面crash概率，以便后期的性能优化。
 
 4.`Performance.timeOrigin`: 性能测量开始时的时间的高精度时间戳。
 
-5.`Performance.timing`: 对象包含了各种与浏览器性能有关的时间数据，提供浏览器处理网页的各个阶段的耗时.
+5.**`Performance.timing`: 对象包含了各种与浏览器性能有关的时间数据，提供浏览器处理网页的各个阶段的耗时.**
 
 先看下一个请求发出的整个过程中，各种环节的时间顺序：
 
@@ -96,53 +103,79 @@ navigation: {
 
 ![](./img/072455NuJ.png)
 
+![](./img/timing.jpg)
+
+> 这是一个典型的ssr项目的流程图，前后端分离的项目会多一个Resquest+Response的过程。
 
 
 具体含义：
 
-```
+```js
 timing: {
-        navigationStart：当前浏览器窗口的前一个网页关闭，发生unload事件时的Unix毫秒时间戳。如果没有前一个网页，则等于fetchStart属性。
+		// 在同一个浏览器上下文中，前一个网页（与当前页面不一定同域）unload 的时间戳
+		// 如果无前一个网页 unload ，则与 fetchStart 值相等
+        navigationStart：1542593674588
         
-        unloadEventStart：如果前一个网页与当前网页属于同一个域名，则返回前一个网页的unload事件发生时的Unix毫秒时间戳。如果没有前一个网页，或者之前的网页跳转不是在同一个域名内，则返回值为0。
+        // 如果前一个网页与当前网页属于同一个域名，则返回前一个网页的unload事件发生时的Unix毫秒时间戳。
+        // 如果没有前一个网页，或者之前的网页跳转不是在同一个域名内，则返回值为0。
+        unloadEventStart：0
         
-        unloadEventEnd：如果前一个网页与当前网页属于同一个域名，则返回前一个网页unload事件的回调函数结束时的Unix毫秒时间戳。如果没有前一个网页，或者之前的网页跳转不是在同一个域名内，则返回值为0。
+        // 如果前一个网页与当前网页属于同一个域名，则返回前一个网页unload事件的回调函数结束时的Unix毫秒时间戳。
+        // 如果没有前一个网页，或者之前的网页跳转不是在同一个域名内，则返回值为0。
+        unloadEventEnd：0
         
-        redirectStart：返回第一个HTTP跳转开始时的Unix毫秒时间戳。如果没有跳转，或者不是同一个域名内部的跳转，则返回值为0。
+        // 返回第一个HTTP跳转开始时的Unix毫秒时间戳。
+        // 如果跳转都是同源的，则返回开始获取发起重定向的时间点，否则返回0
+        redirectStart：0
         
-        redirectEnd：返回最后一个HTTP跳转结束时（即跳转回应的最后一个字节接受完成时）的Unix毫秒时间戳。如果没有跳转，或者不是同一个域名内部的跳转，则返回值为0。
+        // 返回最后一个HTTP跳转结束时的Unix毫秒时间戳。
+        // 如果没有跳转，或者跳转的不是同源的，则返回值为0。
+        redirectEnd：0
+           
+        // 返回浏览器准备使用HTTP请求读取文档时的Unix毫秒时间戳。该事件在网页查询本地缓存之前发生。
+        fetchStart：1542593674593
         
-        fetchStart：返回浏览器准备使用HTTP请求读取文档时的Unix毫秒时间戳。该事件在网页查询本地缓存之前发生。
+        // 返回域名查询开始时的Unix毫秒时间戳。如果使用持久连接，或者信息是从本地缓存获取的，则返回值等同于fetchStart属性的值。
+        domainLookupStart：1542593674593
         
-        domainLookupStart：返回域名查询开始时的Unix毫秒时间戳。如果使用持久连接，或者信息是从本地缓存获取的，则返回值等同于fetchStart属性的值。
+        // 返回域名查询结束时的Unix毫秒时间戳。如果使用持久连接，或者信息是从本地缓存获取的，则返回值等同于fetchStart属性的值。
+        domainLookupEnd：1542593674593  
         
-        domainLookupEnd：返回域名查询结束时的Unix毫秒时间戳。如果使用持久连接，或者信息是从本地缓存获取的，则返回值等同于fetchStart属性的值。
+        // 返回HTTP请求开始向服务器发送时的Unix毫秒时间戳。如果使用持久连接（persistent connection），则返回值等同于fetchStart属性的值。
+        connectStart：1542593674593        
         
-        connectStart：返回HTTP请求开始向服务器发送时的Unix毫秒时间戳。如果使用持久连接（persistent connection），则返回值等同于fetchStart属性的值。
+        // 返回浏览器与服务器之间的连接建立时的Unix毫秒时间戳。如果建立的是持久连接，则返回值等同于fetchStart属性的值。连接建立指的是所有握手和认证过程全部结束。
+        connectEnd：1542593674593
         
-        connectEnd：返回浏览器与服务器之间的连接建立时的Unix毫秒时间戳。如果建立的是持久连接，则返回值等同于fetchStart属性的值。连接建立指的是所有握手和认证过程全部结束。
+        // 返回浏览器与服务器开始安全链接的握手时的Unix毫秒时间戳。如果当前网页不要求安全连接，则返回0。
+        secureConnectionStart：0
         
-        secureConnectionStart：返回浏览器与服务器开始安全链接的握手时的Unix毫秒时间戳。如果当前网页不要求安全连接，则返回0。
+        // 返回浏览器向服务器发出HTTP请求时（或开始读取本地缓存时）的Unix毫秒时间戳。
+        requestStart：1542593674593
+       
+       // 返回浏览器从服务器收到（或从本地缓存读取）最后一个字节时（如果在此之前HTTP连接已经关闭，则返回关闭时）的Unix毫秒时间戳。
+        responseEnd：1542593674753
         
-        requestStart：返回浏览器向服务器发出HTTP请求时（或开始读取本地缓存时）的Unix毫秒时间戳。
+        // 返回当前网页DOM结构开始解析时的Unix毫秒时间戳。
+        domLoading：1542593674754    
         
-        responseStart：返回浏览器从服务器收到（或从本地缓存读取）第一个字节时的Unix毫秒时间戳。
+        // 返回当前网页DOM结构结束解析、开始加载内嵌资源时Unix毫秒时间戳。
+        domInteractive：1542593674979
         
-        responseEnd：返回浏览器从服务器收到（或从本地缓存读取）最后一个字节时（如果在此之前HTTP连接已经关闭，则返回关闭时）的Unix毫秒时间戳。
+        // 返回当前网页DOMContentLoaded事件发生时（即DOM结构解析完毕、所有脚本开始运行时）的Unix毫秒时间戳。
+        domContentLoadedEventStart：1542593674981        
         
-        domLoading：返回当前网页DOM结构开始解析时（即Document.readyState属性变为“loading”、相应的readystatechange事件触发时）的Unix毫秒时间戳。
+        // 返回当前网页所有需要执行的脚本执行完成时的Unix毫秒时间戳。
+        domContentLoadedEventEnd：1542593674981
+                
+        // 返回当前网页DOM结构生成时的Unix毫秒时间戳。
+        domComplete：1542593674982
         
-        domInteractive：返回当前网页DOM结构结束解析、开始加载内嵌资源时（即Document.readyState属性变为“interactive”、相应的readystatechange事件触发时）的Unix毫秒时间戳。
-        
-        domContentLoadedEventStart：返回当前网页DOMContentLoaded事件发生时（即DOM结构解析完毕、所有脚本开始运行时）的Unix毫秒时间戳。
-        
-        domContentLoadedEventEnd：返回当前网页所有需要执行的脚本执行完成时的Unix毫秒时间戳。
-        
-        domComplete：返回当前网页DOM结构生成时（即Document.readyState属性变为“complete”，以及相应的readystatechange事件发生时）的Unix毫秒时间戳。
-        
-        loadEventStart：返回当前网页load事件的回调函数开始时的Unix毫秒时间戳。如果该事件还没有发生，返回0。 window.load里面代码执行时间
-        
-        loadEventEnd：返回当前网页load事件的回调函数运行结束时的Unix毫秒时间戳。如果该事件还没有发生，返回0。
+        // 返回当前网页onload事件的回调函数开始时的Unix毫秒时间戳。如果该事件还没有发生，返回0。
+        loadEventStart：1542593674982  
+     
+        // 返回当前网页onload事件的回调函数运行结束时的Unix毫秒时间戳。如果该事件还没有发生，返回0。     
+        loadEventEnd：1542593674982
 ```
 
 ### 使用 performance.timing 信息简单计算出网页性能数据
@@ -193,18 +226,16 @@ function getPerformanceTiming () {
     times.loadEvent = t.loadEventEnd - t.loadEventStart;
 
     // DNS 缓存时间
-    times.appcache = t.domainLookupStart - t.fetchStart;
+    times.dnsCache = t.domainLookupStart - t.fetchStart;
 
     // 卸载页面的时间
     times.unloadEvent = t.unloadEventEnd - t.unloadEventStart;
 
     // TCP 建立连接完成握手的时间
-    times.connect = t.connectEnd - t.connectStart;
- 
+    times.TCPconnect = t.connectEnd - t.connectStart;
+    
     /**
      * 白屏时间
-     * 这个时间没有准确定义
-     * 计算方式：t.domInteractive - t.navigationStart 或 t.responseStart - t.navigationStart
     */ 
     times.whiteTime = t.domInteractive - t.navigationStart;
 
@@ -240,17 +271,11 @@ performance.now()
 
 使用performance.getEntries() 获取所有资源请求的时间数据，这个函数返回的将是一个数组，包含了页面中所有的 HTTP 请求
 
-![](./img/getall.jpg)
+下面是其属性。
 
+与 performance.timing 对比，没有了DOM相关的属性，新增了name, duration, entryType, initiatorType的属性
 
-#### `performance`的参考链接：
-
-https://developer.mozilla.org/zh-CN/docs/Web/API/Window/performance
-
-http://javascript.ruanyifeng.com/bom/performance.html
-
-http://www.alloyteam.com/2015/09/explore-performance/
-
+![](./img/resource.png)
 
 ## 使用示例
 见项目monitor示例。
@@ -270,5 +295,19 @@ http://www.alloyteam.com/2015/09/explore-performance/
 
 [前端性能清单，让你的网站跑的更快](https://github.com/thedaviddias/Front-End-Performance-Checklist)  
 [中文版](https://github.com/JohnsenZhou/Front-End-Performance-Checklist)
+
+
+参考链接：
+http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/Window/performance
+
+http://javascript.ruanyifeng.com/bom/performance.html
+
+http://www.alloyteam.com/2015/09/explore-performance/
+
+https://juejin.im/entry/58ba9cb5128fe100643da2cc
+
+[当你在浏览器中输入 google.com 并且按下回车之后发生了什么？](https://github.com/skyline75489/what-happens-when-zh_CN)
 
 
