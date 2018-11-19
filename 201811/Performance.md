@@ -291,11 +291,16 @@ performance.now()
 ![](./img/resource.png)
 
 ## 使用示例
+
+手写一个js监控插件，利用performance获取性能指标数据，并提交给后端。
+
 见项目monitor示例。
 
 ## 分析展示性能数据
 
 搭建一个性能监控的后台系统，统计各个项目的性能指标。
+
+---
 
 ## 我们可以做哪些优化？
 
@@ -529,8 +534,9 @@ server
 - [ ] **JavaScript 分析:**  检查JavaScript文件（以及CSS）中的性能问题。
 - [ ] **使用CDN存放资源资源：**  由于浏览器同一域名并行下载数有限，利用多域名主机存放静态资源，增加并行下载数，缩短资源加载时间
 
+---
 
-参考链接：
+## 参考链接：
 
 [FEX周刊](http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/)
 
