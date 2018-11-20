@@ -20,10 +20,11 @@
           <entry key="project.closed" value="13" />
           <entry key="project.open.time.1" value="10" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,7 +48,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="1730" />
+          <entry key="md" value="1756" />
           <entry key="txt" value="19" />
         </counts>
       </usages-collector>
@@ -55,7 +56,7 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="23" />
-          <entry key="Markdown" value="1706" />
+          <entry key="Markdown" value="1732" />
           <entry key="PLAIN_TEXT" value="19" />
         </counts>
       </usages-collector>
@@ -72,8 +73,8 @@
         <entry file="file://$PROJECT_DIR$/201811/Performance.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="302">
-                <caret line="361" selection-start-line="361" selection-end-line="361" />
+              <first_editor relative-caret-position="495">
+                <caret line="562" lean-forward="true" selection-start-line="562" selection-end-line="562" />
               </first_editor>
               <second_editor />
             </state>
@@ -109,15 +110,16 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="82" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,6 +142,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,11 +192,12 @@
       <workItem from="1542183230131" duration="1278000" />
       <workItem from="1542192027674" duration="4625000" />
       <workItem from="1542357762165" duration="13819000" />
+      <workItem from="1542635497712" duration="1670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40643000" />
+    <option name="totallyTimeSpent" value="42313000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -205,12 +209,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="82" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.13460183" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49799198" visible="true" weight="0.100579254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" visible="true" weight="0.13460183" />
+      <window_info id="Favorites" order="2" sideWeight="0.502008" side_tool="true" weight="0.13460183" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -220,7 +224,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970297" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32871288" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -374,8 +378,8 @@
     <entry file="file://$PROJECT_DIR$/201811/Performance.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="302">
-            <caret line="361" selection-start-line="361" selection-end-line="361" />
+          <first_editor relative-caret-position="495">
+            <caret line="562" lean-forward="true" selection-start-line="562" selection-end-line="562" />
           </first_editor>
           <second_editor />
         </state>
