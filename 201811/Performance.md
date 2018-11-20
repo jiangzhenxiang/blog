@@ -1,5 +1,6 @@
 # 前端性能监控及前端性能优化
 
+本次主要内容：
 1. 前端性能监控系统 及 **如何做到性能监控**
 2. **如何进行前端性能优化**
 
@@ -41,7 +42,7 @@
 ## 需要采集哪些性能数据，如何采集？
 线上监控有哪些指标呢？如何更好地反映用户感知？
 
-对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响应、dom渲染时间等浏览器加载过程指标。
+对于工程师来说，可能关注的是 DNS 查询、TCP 连接、服务响响应时间、dom渲染时间等浏览器加载过程指标。
 
 我们根据用户的痛点，将浏览器加载过程抽取出几个关键指标，如白屏时间、首屏时间、dom树构建时间、总下载时间等。
 
@@ -57,9 +58,9 @@
 
 `Performance` 接口可以获取到当前页面中与性能相关的信息。
 
-我们可以使用 `performance` 提供了一组精确的数据，经过简单的计算就能得出一些网页性能数据。
+我们可以使用 `performance` 提供的一组精确的数据，经过简单的计算就能得出一些网页性能数据。
 
-先在chrome浏览器的控制台中输入`performance`看下出现属性。
+先在chrome浏览器的控制台中输入`performance`看下出现内容。
 
 ![](./img/window.performance.jpg)
 
@@ -203,7 +204,7 @@ function getPerformanceTiming () {
     times.domReady = t.domComplete - t.responseEnd;
 
     //【重要】重定向的时间
-    //【原因】拒绝重定向！比如，http://example.com/ 就不该写成 http://example.com
+    //【原因】拒绝重定向！
     times.redirect = t.redirectEnd - t.redirectStart;
 
     //【重要】DNS 查询时间
@@ -225,18 +226,10 @@ function getPerformanceTiming () {
     //【原因】是否太多不必要的操作都放到 onload 回调函数里执行了，考虑过延迟加载、按需加载的策略么？
     times.loadEvent = t.loadEventEnd - t.loadEventStart;
 
-    // DNS 缓存时间
-    times.dnsCache = t.domainLookupStart - t.fetchStart;
-
-    // 卸载页面的时间
-    times.unloadEvent = t.unloadEventEnd - t.unloadEventStart;
-
     // TCP 建立连接完成握手的时间
     times.TCPconnect = t.connectEnd - t.connectStart;
     
-    /**
-     * 白屏时间
-    */ 
+    //白屏时间
     times.whiteTime = t.domInteractive - t.navigationStart;
 
     return times;
@@ -290,6 +283,8 @@ performance.now()
 ```
 ![](./img/resource.png)
 
+4. `Performance.getEntriesByType()`
+5. `Performance.getEntriesByName()`
 ## 使用示例
 
 手写一个js监控插件，利用performance获取性能指标数据，并提交给后端。
@@ -298,7 +293,7 @@ performance.now()
 
 ## 分析展示性能数据
 
-搭建一个性能监控的后台系统，统计各个项目的性能指标。
+将监控js插件完善后，推荐给大家使用。同时搭建一个性能监控的后台系统，统计各个项目的性能指标，便于我们分析自己项目的性能短板。
 
 ---
 
@@ -318,7 +313,7 @@ performance.now()
 html
 ---
 
-- [ ] **在JavaScript引用之前引用CSS标记：** ![high] 确保在使用JavaScript代码之前加载CSS。
+- [ ] **在JavaScript引用之前引用CSS：** 确保在使用JavaScript代码之前加载CSS。
 
     ```html
     <!-- 不推荐 -->
@@ -387,6 +382,7 @@ css
     > 它还可以提高代码的可维护性并使站点可访问性更强。
 
     *怎么做：*
+
     > 始终使用外部样式表或在<head>中嵌入CSS（并遵循其他CSS性能规则）。
 
 - [ ] **分析样式表的复杂性：** 分析样式表有助于发现有问题的、冗余和重复的CSS选择器。
@@ -418,8 +414,9 @@ image
 
     *为什么：*
     > 确保图片不会减慢网站速度
-        
+
     *怎么做：*
+
     > 使用[Lighthouse](https://developers.google.com/web/tools/lighthouse/)识别哪些图像可以使用下一代图片格式（如JPEG 2000m JPEG XR或WebP）。
 
 javascript
@@ -430,6 +427,7 @@ javascript
     > 删除所有不必要的空格、注释和空行将减少JavaScript文件的大小，并加快网站的页面加载时间，提升用户体验。
 
     *怎么做：*
+
     > 建议使用下面的工具在构建或部署之前自动缩小文件。
 
 * [ ] **非阻塞JavaScript：** 使用defer属性或使用async来异步加载JavaScript文件。
@@ -465,7 +463,7 @@ javascript
     > tree shaking 是一个术语，通常用于描述移除 JavaScript 上下文中的未引用代码
     
 - [ ] **使用 code splitting 分包加载 js:** 通过分包加载，减少首次加载所需时间
-    
+  
     *怎么做：*
     > * **Vendor splitting** 根据库文件拆分模块，例如 React 或 lodash 单独打包成一个文件
     > * **Entry point splitting** 根据入口拆分模块，例如通过多页应用入口或者单页应用路由进行拆分
@@ -477,6 +475,7 @@ server
 - [ ] **网站使用HTTPS:** 
 
     *Why:*
+
     > 如今的现代浏览器对于不安全的网站在许多功能上做了些限制。 例如：如果网站未使用HTTPS，则地理定位，推送通知和服务工作程序等功能会不起作用。
 
 - [ ] **页面大小 < 1500 KB:** (理想情况 < 500 KB) 尽可能减少页面和资源的大小。
@@ -485,14 +484,16 @@ server
     > 提高最佳用户体验非常重要。
 
     *怎么做：*
+
     > 前端性能清单中的所有规则将帮助你尽可能地减少资源和代码。
 
 - [ ] **页面加载时间 < 3秒：** 尽可能减少页面加载时间，以便快速将内容传递给用户。
 
     *为什么：*
     > 网站或应用程序速度越快，反弹增加的可能性越小，换句话说，失去用户或未来客户的机会就越少。Google对该主题的充分研究证明了这一点。
-    
+
     *怎么做：*
+
     >  使用[Page Speed Insight](https://developers.google.com/speed/pagespeed/insights/)或[WebPageTest](https://www.webpagetest.org/)等在线工具分析可能会降低速度的工具，并使用前端性能清单来缩短加载时间。
 
 - [ ] **TTFB < 1.3s:** 尽可能减少浏览器在接收数据之前等待的时间。
@@ -515,7 +516,7 @@ server
 
 - [ ] **减少页面重定向**  
 
---- 
+---
 
 #### 中优先级的: 
 - [ ] **压缩 HTML:**  HTML代码压缩，将注释、空格和新行从生产文件中删除。
@@ -527,6 +528,7 @@ server
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     ```
     *为什么：*
+
     > 浏览器必须连接DNS服务器并等待查找完成后再获取资源（字体，CSS文件...），`prefetche`和`preconnect`允许浏览器在空闲时进行上面的操作，在真实请求时就不需要再花时间去做一系列动作。这带来了性能的提升。
 
 - [ ] **使用矢量图像 VS 栅格/位图：**  可以的话，推荐使用矢量图像而不是位图图像。
@@ -538,16 +540,15 @@ server
 
 ## 参考链接：
 
+[前端性能清单，让你的网站跑的更快](https://github.com/thedaviddias/Front-End-Performance-Checklist)  
+
 [FEX周刊](http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/)
 
 [MDN-performance文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/performance)
-
-[Performance API](http://javascript.ruanyifeng.com/bom/performance.html)
 
 [初探performance](http://www.alloyteam.com/2015/09/explore-performance/)
 
 [掘金：前端性能监控](https://juejin.im/entry/58ba9cb5128fe100643da2cc)
 
 [当你在浏览器中输入 google.com 并且按下回车之后发生了什么？](https://github.com/skyline75489/what-happens-when-zh_CN)
-
 
