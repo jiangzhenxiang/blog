@@ -347,7 +347,7 @@ html
 
     *怎么做：*
 
-    > 确保<head>中的<link>和<style>始终位于<script>之前。
+    > 确保css始终位于<script>之前。
     
     * 📖 [合理安排styles和scripts来提高网页速度](https://varvy.com/pagespeed/style-script-order.html)
 
