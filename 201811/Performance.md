@@ -1,6 +1,6 @@
 # 前端性能监控及前端性能优化
 
-本次主要内容：
+主要内容：
 1. 前端性能监控系统 及 **如何做到性能监控**
 2. **如何进行前端性能优化**
 
@@ -8,7 +8,7 @@
 
 首先：因为性能直接影响了产品。对于用户来说，加载的延迟、操作的卡顿影响了用户体验
 
-其次：对于公司来说，影响了公司利益
+AÅ其次：对于公司来说，影响了公司利益
 
 > 国外有很多这方面的调研数据：
 > ![](./img/shouyi.jpg)
@@ -298,7 +298,7 @@ performance.now()
 
 4. `Performance.getEntriesByType()`
 5. `Performance.getEntriesByName()`
-## 使用示例
+# 使用示例
 
 手写一个js监控插件，利用performance获取性能指标数据，并提交给后端。
 
@@ -421,6 +421,7 @@ image
 * [ ] **图像格式：** 适当选择图像格式。
 
     *为什么：*
+
     > 确保图片不会减慢网站速度
 
     *怎么做：*
@@ -443,18 +444,17 @@ javascript
     ```html
     <!-- Defer Attribute -->
     <script defer src="foo.js"/>
-
+    
     <!-- Async Attribute -->
     <script async src="foo.js"/>
     ```
 
     *为什么：*
-    
 > JavaScript阻止HTML文档的正常解析，因此当解析器到达<script>标记时（特别是在<head>内），它会停止解析并且执行脚本。如果您的脚本位于页面顶部，则强烈建议添加`async`和`defer`，但如果在</body>标记之前加载，没有太大影响。但是，使用这些属性来避免性能问题是一种很好的做法。
-    
+
     *怎么做：*
     > 添加`async`或`defer`作为script脚本标记的属性。
-
+    
     * 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
     * 📖 [Defer loading JavaScript](https://varvy.com/pagespeed/defer-loading-javascript.html)
     
@@ -550,22 +550,25 @@ server
 #### 低优先级的: 
 - [ ] **删除不必要的属性：**  像 `type="text/javascript"` or `type="text/css"` 这样的属性应该被移除。
     *为什么*
+
     > 类型属性不是必需的，因为HTML5把text/css和text/javascript作为默认值。没用的代码应在网站或应用程序中删除，因为它们会使网页体积增大。
-    
+
 - [ ] **删除不必要的注释：**
     *为什么：*
     > 注释对用户来说是没有用的，应该从生产环境文件中删除。可能需要保留注释的一种情况是：保留远端代码库（keep the origin for a library）。
 
     *怎么做：*
+
     > 大多数情况下，可以使用HTML minify插件删除注释。
-    
+
 - [ ] **检查依赖项大小限制：** 确保使用最优的外部库，大多数情况下，可以使用更轻的库来实现相同的功能。
 
     *为什么：*
     > 例如，MomentJS是一个很棒的库，但是你可能永远不会使用其中的很多方法，这就是为什么创建Day.js的原因。瞬间大小从16.4kB到2kB。
 
     *怎么做：*
-    > 始终比较并选择最适合您需求的轻型库。还可以使用[npm trends]
+
+    > 始终比较并选择最适合您需求的轻型库。还可以使用[npm trends](https://www.npmtrends.com/momentjs-vs-dayjs)
 ---
 
 ## 参考链接：
