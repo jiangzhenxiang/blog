@@ -579,6 +579,3 @@ server
 [初探performance](http://www.alloyteam.com/2015/09/explore-performance/)
 
 [掘金：前端性能监控](https://juejin.im/entry/58ba9cb5128fe100643da2cc)
-
-[当你在浏览器中输入 google.com 并且按下回车之后发生了什么？](https://github.com/skyline75489/what-happens-when-zh_CN)
-
