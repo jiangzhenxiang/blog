@@ -27,12 +27,12 @@
 配置npm下载源
 
 1.使用npm自带配置
-`npm config set registry http://100.73.16.43:4873/`
+`npm config set registry http://ip:4873/`
 2.使用nrm管理npm(推荐）
 
 ```bash
 npm install -g nrm
-nrm add sinopia http://100.73.16.43:4873/
+nrm add sinopia http://ip:4873/
 nrm use sinopia
 ```
 

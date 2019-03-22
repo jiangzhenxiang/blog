@@ -45,8 +45,8 @@ User git
 IdentityFile ~/.ssh/id_rsa  
 
 # gitlab
-Host git.jdb-dev.com
-HostName git.jdb-dev.com
+Host git.dev.com
+HostName git.dev.com
 User git
 IdentityFile ~/.ssh/id_rsa_gitlab
 ```
@@ -58,5 +58,5 @@ IdentityFile ~/.ssh/id_rsa_gitlab
 ssh -T git@github.com
  
 # 测试gitlab
-ssh -T git@git.jdb-dev.com
+ssh -T git@git.dev.com
 ```
