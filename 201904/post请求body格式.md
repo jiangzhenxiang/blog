@@ -12,6 +12,7 @@ parameter=value&also=another
 ```
 
 #### 示例
+
 ```js
 getList(commonData) {
     // json对象转URL query parameters
@@ -55,6 +56,7 @@ PNG ... content of chrome.png ...
 ```
 
 ## application/json
+
 示例：
 
 ```js
@@ -65,12 +67,32 @@ $http.post(url, data).success(function(result) {
 ```
 
 最终发送的请求是：
+
 ```js
-POST http://www.example.com HTTP/1.1 
+POST http://www.example.com HTTP/1.1
 Content-Type: application/json;charset=utf-8
 
 {"title":"test","sub":[1,2,3]}
 ```
 
-
 ## text/xml 很少用
+
+## 获取 url params
+
+```js
+  getUrlParam() {
+    let aQuery = [];
+    if (window.location.hash != "") {
+      aQuery = window.location.hash.split('?');
+    } else if (window.location.search != "") {
+      aQuery = window.location.search.split('?');
+    }
+
+    if (aQuery.length > 1) {
+      commonData = aQuery[1];
+    }
+
+    if(!commonData) {
+    }
+  }
+```
