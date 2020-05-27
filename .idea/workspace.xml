@@ -6,6 +6,7 @@
       <change afterPath="$PROJECT_DIR$/nginx/img/success.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +73,7 @@
       <workItem from="1542192027674" duration="4625000" />
       <workItem from="1542357762165" duration="13819000" />
       <workItem from="1542635497712" duration="2893000" />
-      <workItem from="1590568088440" duration="1421000" />
+      <workItem from="1590568088440" duration="1518000" />
     </task>
     <servers />
   </component>

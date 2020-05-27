@@ -240,7 +240,7 @@ server {
 }
 
 ```
-刷新页面请求成功了
+配置好后，执行 `nginx -s reload`重启，刷新页面请求成功了
 ![](./img/success.png)
 
 
