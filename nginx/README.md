@@ -240,6 +240,7 @@ server {
 }
 
 ```
+将html中的请求地址改为 /api/getFriend，`xhr.open('GET', '/api/getFriend')`
 配置好后，执行 `nginx -s reload`重启，刷新页面请求成功了
 ![](./img/success.png)
 
